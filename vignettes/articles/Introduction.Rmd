@@ -1,0 +1,51 @@
+---
+title: "Introduction"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mnbplots)
+```
+
+
+```{r}
+library(ggplot2)
+```
+
+## Theme & language setup
+```{r}
+ggplot(economics) +
+  geom_line(aes(date, unemploy), color = closest_mnb_color("blue")) +
+  theme_mnb_ts(base_size = 16) + 
+  labs(subtitle = "Munkanélküliség az USA-ban") + 
+  scale_y_number()
+```
+
+```{r}
+options(lang = "en")
+
+ggplot(economics) +
+  geom_line(aes(date, unemploy), color = closest_mnb_color("blue")) +
+  theme_mnb_ts(base_size = 16) + 
+  labs(subtitle = "Unemployment in the USA") + 
+  scale_y_number()
+```
+
+## Working with colors
+
+
+```{r}
+mnb_colors()
+```
+
+We developed a function to simple rewrite user specified colors to the ones that matches our corporate style.
+
+```{r}
+closest_mnb_color("red")
+```
