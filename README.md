@@ -1,4 +1,4 @@
-# mnbplots
+# mnbplots <img src="logo.png" align="right" />
 
 `mnbplots` is a collection of color palettes and themes specifically designed for MNB. The palettes are designed to be accessible and follow the color scheme of the Brand Guidelines.
 

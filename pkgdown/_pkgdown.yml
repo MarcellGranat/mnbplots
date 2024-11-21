@@ -1,0 +1,11 @@
+template:
+  bootstrap: 5
+  bslib:
+    base_font: {google: "Roboto"}
+    bg: "#ffffff"
+    fg: "#1b1c38"
+    primary: "#cdbd8c"
+navbar:
+  bg: "#1b1c38"
+  structure:
+    right: [search, github]
