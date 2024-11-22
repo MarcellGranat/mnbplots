@@ -79,7 +79,10 @@ scale_x_number <- function(..., expand = c(0, 0)) {
 #' @export
 #'
 scale_y_percent <- function(..., expand = c(0, 0)) {
-  ggplot2::scale_y_continuous(labels = ~ scales::percent(., decimal.mark = .decimal()))
+  ggplot2::scale_y_continuous(labels = ~ scales::percent(., decimal.mark = .decimal()),
+  expand = expand,
+  ...
+  )
 }
 
 #' Scale Y-axis with Formatted Thousend Numbers
