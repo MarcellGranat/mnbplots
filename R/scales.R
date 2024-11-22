@@ -34,8 +34,34 @@
 #'
 #' @export
 #'
-scale_y_number <- function() {
-  ggplot2::scale_y_continuous(labels = ~ scales::number(., big.mark = .bigmark(), decimal.mark = .decimal()))
+scale_y_number <- function(..., expand = c(0, 0)) {
+  ggplot2::scale_y_continuous(
+    labels = ~ scales::number(., big.mark = .bigmark(), decimal.mark = .decimal()),
+    expand = expand,
+    ...
+  )
+}
+
+#' Scale X-axis with Formatted Numbers
+#'
+#' This function creates a continuous x-axis scale with numbers formatted according to the current language setting.
+#'
+#' @return A ggplot2 scale object for the x-axis with formatted numbers.
+#'
+#' @examples
+#' library(ggplot2)
+#' ggplot(mtcars, aes(x = wt, y = mpg)) +
+#'   geom_point() +
+#'   scale_x_number()
+#'
+#' @export
+#'
+scale_x_number <- function(..., expand = c(0, 0)) {
+  ggplot2::scale_x_continuous(
+    labels = ~ scales::number(., big.mark = .bigmark(), decimal.mark = .decimal()),
+    expand = expand,
+    ...
+  )
 }
 
 #' Scale Y-axis with Formatted Percent
@@ -52,7 +78,7 @@ scale_y_number <- function() {
 #'
 #' @export
 #'
-scale_y_percent <- function() {
+scale_y_percent <- function(..., expand = c(0, 0)) {
   ggplot2::scale_y_continuous(labels = ~ scales::percent(., decimal.mark = .decimal()))
 }
 
@@ -70,8 +96,11 @@ scale_y_percent <- function() {
 #'
 #' @export
 #'
-scale_k_number <- function() {
-  ggplot2::scale_y_continuous(labels = ~ scales::number(. / 1e3, big.mark = .bigmark(), decimal.mark = .decimal()))
+scale_k_number <- function(..., expand = c(0, 0)) {
+  ggplot2::scale_y_continuous(
+    labels = ~ scales::number(. / 1e3, big.mark = .bigmark(), decimal.mark = .decimal()),
+    expand = expand
+  )
 }
 
 #' Scale Y-axis with Formatted Million Numbers
@@ -88,8 +117,12 @@ scale_k_number <- function() {
 #'
 #' @export
 #'
-scale_m_number <- function() {
-  ggplot2::scale_y_continuous(labels = ~ scales::number(. / 1e6, big.mark = .bigmark(), decimal.mark = .decimal()))
+scale_m_number <- function(..., expand = c(0, 0)) {
+  ggplot2::scale_y_continuous(
+    labels = ~ scales::number(. / 1e6, big.mark = .bigmark(), decimal.mark = .decimal()),
+    expand,
+    ...
+  )
 }
 
 #' Scale X-axis with Quarter Labels
@@ -99,6 +132,10 @@ scale_m_number <- function() {
 #' @return A ggplot2 scale object for the x-axis with quarter labels.
 #'
 #' @export
-scale_x_quarter <- function() {
-  ggplot2::scale_x_date(labels = date_format("%YQ%q")) # TODO hun
+scale_x_quarter <- function(..., expand = c(0, 0)) {
+  ggplot2::scale_x_date(
+    labels = date_format("%YQ%q"),
+    expand,
+    ...
+  ) # TODO hun
 }
