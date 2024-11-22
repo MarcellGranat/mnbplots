@@ -1,5 +1,24 @@
+#' Create an MNB-styled GT Table
+#'
+#' This function creates a GT table with MNB (Magyar Nemzeti Bank) styling applied.
+#' It formats numbers, percentages, and applies specific styles to the table.
+#'
+#' @param data A data frame or GT table object to be styled.
+#' @param title Optional. A string to be used as the table title.
+#' @param comment Optional. A string to be added as a source note to the table.
+#'
+#' @return A GT table object with MNB styling applied.
+#'
+#' @examples
+#' library(gt)
+#' data(mtcars)
+#' iris |> 
+#'   head() |> 
+#'   gt_mnb(title = "Random title", comment = md("Source: This is a built-in dataset")) |> 
+#' 
+#' @export
+
 gt_mnb <- function(data, title = NULL, comment = NULL) {
-  
   if (is.data.frame(data)) {
     data <- gt::gt(data)
   }
@@ -14,7 +33,7 @@ gt_mnb <- function(data, title = NULL, comment = NULL) {
       tidyselect::where(~ is.numeric(.x) && max(abs(.x), na.rm = TRUE) <= 1), 
       dec_mark = .decimal(), sep_mark = .bigmark()
     ) |> 
-    cols_label_with(
+    gt::cols_label_with(
       fn = \(x) ifelse(stringr::str_length(x) < 5, stringr::str_to_upper(x), stringr::str_to_sentence(x))
     ) |> 
     gt::tab_style(
@@ -134,8 +153,3 @@ gt_mnb <- function(data, title = NULL, comment = NULL) {
   
   gt_result
 }
-
-iris |> 
-  head() |> 
-  gt_mnb(title = "random title\nmultine", comment = md("mile\nnéoew\nine")) |> 
-  gt::tab_source_note(md("he\nhe"))
