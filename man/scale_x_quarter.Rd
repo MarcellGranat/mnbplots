@@ -4,7 +4,7 @@
 \alias{scale_x_quarter}
 \title{Scale X-axis with Quarter Labels}
 \usage{
-scale_x_quarter()
+scale_x_quarter(..., expand = c(0, 0))
 }
 \value{
 A ggplot2 scale object for the x-axis with quarter labels.

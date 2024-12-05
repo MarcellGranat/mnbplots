@@ -238,4 +238,123 @@ scale_autodate <- function(..., expand = c(0, 0)) {
   )
 }
 
+#' MNB Divergent Colors
+#'
+#' This function returns the divergent colors for a given n.
+#'
+#' @param n Number of colors
+#' @param rev Logical. If TRUE, reverses the order of the colors. Default is FALSE.
+#'
+#' @return A vector of colors
+#'
+#' @examples
+#' library(ggplot2)
+#' scales::show_col(mnb_divergent_colors(4))
+#'
+#' @export
+
+mnb_divergent_colors <- function(n, rev = FALSE) {
+    
+  blues <- c(
+  "#2B315E",
+  "#334B8A",
+  "#586EA3",
+  "#98ABCA",
+  "#D0DAE6"
+  )
+
+  reds <- c(
+    "#481919",
+    "#832B2A",
+    "#CF5E5B",
+    "#D98583",
+    "#E8B7B4"
+  )
+
+  colors <- switch (n,
+    "1" = blues[1],
+    "2" = c(blues[1], reds[2]),
+    "3" = c(blues[c(1, 3)], reds[2]),
+    "4" = c(blues[c(1, 3)], reds[c(3, 2)]),
+    "5" = c(blues[c(1, 3, 4)], reds[c(3, 2)]),
+    "6" = c(blues[c(1, 3, 4)], reds[c(4, 3, 2)]),
+    "7" = c(blues[c(1, 2, 3, 4)], reds[c(4, 3, 2)]),
+    "8" = c(blues[c(1, 2, 3, 4)], reds[c(5, 4, 3, 2)]),
+    "9" = c(blues[c(1, 2, 3, 4, 5)], reds[c(5, 4, 3, 2)]),
+    "10" = c(blues[c(1, 2, 3, 4, 5)], reds[c(5, 4, 3, 2, 1)]),
+  )
+
+  if (rev) rev(colors) else colors
+}
+
+
+#' MNB Divergent Binned Fill Scale for ggplot2
+#'
+#' This function creates a binned fill scale using the MNB (Magyar Nemzeti Bank) divergent color palette for ggplot2.
+#'
+#' @param n.breaks Optional. Number of breaks for the binned scale. If NULL, the number of breaks is determined by the `breaks` parameter.
+#' @param breaks Optional. A vector of break points for the binned scale. Default is waiver(), which lets ggplot2 determine the breaks.
+#' @param rev Logical. If TRUE, reverses the order of the colors. Default is FALSE.
+#' @param ... Additional arguments passed to ggplot2::binned_scale().
+#'
+#' @return A ggplot2 binned fill scale object using the MNB divergent color palette.
+#'
+#' @examples
+#' library(ggplot2)
+#' ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = Petal.Length)) + 
+#'   geom_point(shape = 21) +
+#'   scale_fill_mnb_divergent_b(n.breaks = 5, rev = TRUE)
+#'
+#' @export
+
+scale_fill_mnb_divergent_b <- function(n.breaks = NULL, breaks = waiver(), rev = FALSE, ...) {
+  if (!is.null(breaks)) n <- length(breaks)
+  colors <- mnb_divergent_colors(n, rev)
+
+  ggplot2::binned_scale(
+    aesthetics = "fill", 
+    palette = function(x) mnb_divergent_colors(length(x), rev = rev),
+    n.breaks = n.breaks,
+    breaks = breaks,
+    show.limits = TRUE, 
+    guide = "bins",
+    transform = "reverse",
+    ...
+  )
+}
+
+#' MNB Divergent Binned Color Scale for ggplot2
+#'
+#' This function creates a binned fill scale using the MNB (Magyar Nemzeti Bank) divergent color palette for ggplot2.
+#'
+#' @param n.breaks Optional. Number of breaks for the binned scale. If NULL, the number of breaks is determined by the `breaks` parameter.
+#' @param breaks Optional. A vector of break points for the binned scale. Default is waiver(), which lets ggplot2 determine the breaks.
+#' @param rev Logical. If TRUE, reverses the order of the colors. Default is FALSE.
+#' @param ... Additional arguments passed to ggplot2::binned_scale().
+#'
+#' @return A ggplot2 binned fill scale object using the MNB divergent color palette.
+#'
+#' @examples
+#' library(ggplot2)
+#' ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = Petal.Length)) + 
+#'   geom_point() +
+#'   scale_color_mnb_divergent_b(n.breaks = 5, rev = TRUE)
+#'
+#' @export
+
+scale_color_mnb_divergent_b <- function(n.breaks = NULL, breaks = waiver(), rev = FALSE, ...) {
+  if (!is.null(breaks)) n <- length(breaks)
+  colors <- mnb_divergent_colors(n, rev)
+
+  ggplot2::binned_scale(
+    aesthetics = "color", 
+    palette = function(x) mnb_divergent_colors(length(x), rev = rev),
+    n.breaks = n.breaks,
+    breaks = breaks,
+    show.limits = TRUE, 
+    transform = "reverse",
+    guide = \(x) guide_bins(reverse = FALSE),
+    ...
+  )
+}
 

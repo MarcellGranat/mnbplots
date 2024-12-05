@@ -4,7 +4,7 @@
 \alias{scale_k_number}
 \title{Scale Y-axis with Formatted Thousend Numbers}
 \usage{
-scale_k_number()
+scale_k_number(..., expand = c(0, 0))
 }
 \value{
 A ggplot2 scale object for the y-axis with formatted numbers.

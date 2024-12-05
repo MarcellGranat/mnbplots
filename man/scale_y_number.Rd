@@ -4,7 +4,7 @@
 \alias{scale_y_number}
 \title{Scale Y-axis with Formatted Numbers}
 \usage{
-scale_y_number()
+scale_y_number(..., expand = c(0, 0))
 }
 \value{
 A ggplot2 scale object for the y-axis with formatted numbers.

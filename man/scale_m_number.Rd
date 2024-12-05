@@ -4,7 +4,7 @@
 \alias{scale_m_number}
 \title{Scale Y-axis with Formatted Million Numbers}
 \usage{
-scale_m_number()
+scale_m_number(..., expand = c(0, 0))
 }
 \value{
 A ggplot2 scale object for the y-axis with formatted numbers.

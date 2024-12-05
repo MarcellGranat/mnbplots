@@ -49,3 +49,32 @@ We developed a function to simple rewrite user specified colors to the ones that
 ```{r}
 closest_mnb_color("red")
 ```
+
+## Tables
+
+
+```{r}
+data(mtcars)
+
+mtcars |> 
+  head() |> 
+  tibble::rowid_to_column("model type") |> # long colname
+  gt_mnb(title = "MTcars dataset", comment = "This is a built-in dataset")
+```
+
+## MNB color scales
+
+```{r}
+library(dplyr)
+
+economics |> 
+  select(date, unemploy, psavert) |> 
+  mutate(across(2:3, \(x) x / lag(x) - 1)) |>
+  tail(10) |> 
+  tidyr::pivot_longer(- 1) |> 
+  ggplot(aes(date, name, fill = value)) +
+  geom_tile(color = "black") +
+  theme_mnb_ts(base_size = 16) + 
+  scale_fill_mnb_divergent_b() +
+  labs(subtitle = "Macrostatistics of the USA", fill = "Relative m-o-m change")
+```

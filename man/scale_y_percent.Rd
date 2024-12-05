@@ -4,7 +4,7 @@
 \alias{scale_y_percent}
 \title{Scale Y-axis with Formatted Percent}
 \usage{
-scale_y_percent()
+scale_y_percent(..., expand = c(0, 0))
 }
 \value{
 A ggplot2 scale object for the y-axis with formatted numbers.
