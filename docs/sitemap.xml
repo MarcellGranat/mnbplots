@@ -1,5 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>/404.html</loc></url>
+<url><loc>/articles/GFD.html</loc></url>
 <url><loc>/articles/Introduction.html</loc></url>
 <url><loc>/articles/index.html</loc></url>
 <url><loc>/authors.html</loc></url>
@@ -7,6 +8,7 @@
 <url><loc>/reference/closest_mnb_color.html</loc></url>
 <url><loc>/reference/dot-bigmark.html</loc></url>
 <url><loc>/reference/dot-decimal.html</loc></url>
+<url><loc>/reference/gfd_data.html</loc></url>
 <url><loc>/reference/gt_mnb.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/mnb_colors.html</loc></url>
