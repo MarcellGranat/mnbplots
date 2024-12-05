@@ -46,7 +46,7 @@
 
 .gfd_fetch <- memoise::memoise(function(url, skip = 2) {
   url |> 
-    readr::read_csv(skip = skip) |> 
+    readr::read_csv(skip = skip, show_col_types = FALSE) |> 
     dplyr::mutate(
       dplyr::across(dplyr::any_of("Date"), lubridate::mdy),
     ) |> 
