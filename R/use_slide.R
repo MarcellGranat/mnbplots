@@ -41,5 +41,7 @@ use_slide <- function(filename = "slide", template = "mnb100") {
 
   if (!file.exists(filename)) {
     cli::cli_alert_success("{.filename} created successfully!")
+    utils::file.edit(filename)
   }
+
 }
