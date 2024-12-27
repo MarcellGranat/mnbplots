@@ -23,14 +23,14 @@ use_slide <- function(filename = "slide", template = "mnb100") {
       to = paste0("_extensions/", template, ".pptx")
     )
   } else {
-    cli::cli_abort("{.code template} should be 
+    cli::cli_abort("{.code template} should be
       one of {.val {available_templates}}")
   }
 
-  filename <- filename |> 
-    stringr::str_remove("[.]*.$") |>
+  filename <- filename |>
+    stringr::str_remove("[.].*$") |>
     stringr::str_replace("[^a-zA-Z0-9/]", "_") |>
-    stringr::str_replace("_*", "_") |>
+    stringr::str_replace("[_]+", "_") |>
     stringr::str_replace("^_|_$", "_") |>
     paste0(".qmd")
 
