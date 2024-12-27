@@ -3,7 +3,7 @@ title: "Presentation"
 author: "Granát Marcell"
 format:
   pptx:
-    reference-doc: _extensions/mnb100.pptx
+    reference-doc: mnb100.pptx
 knitr:
     opts_chunk: 
         echo: false
@@ -11,10 +11,12 @@ knitr:
         eval: true
         collapse: true
         dev: "svg"
+        dev.args:
+          bg: "transparent"
         comment: "#>"
         fig.height: 6
         out.height: "600px"
-        fig.align: "center"    
+        fig.align: "center"
 ---
 
 ```{r}
