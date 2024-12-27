@@ -1,0 +1,30 @@
+---
+title: "Presentation"
+author: "Granát Marcell"
+format:
+  pptx:
+    reference-doc: mnb100.pptx
+knitr:
+    opts_chunk: 
+        echo: false
+        message: false
+        eval: true
+        collapse: true
+        dev: "svg"
+        comment: "#>"
+        fig.height: 6
+        out.height: "600px"
+        fig.align: "center"    
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(mnbplots)
+options(lang = "hu")
+
+theme_set(theme_mnb_ts(base_size = 16))
+update_geom_defaults("line", list(linewidth = 1.2, color = mnb_colors(1)))
+update_geom_defaults("rect", list(fill = "lightblue", color = "black"))
+update_geom_defaults("point", list(size = 2, color = mnb_colors(1)))
+```
