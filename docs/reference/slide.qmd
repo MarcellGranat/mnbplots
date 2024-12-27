@@ -3,7 +3,7 @@ title: "Presentation"
 author: "Granát Marcell"
 format:
   pptx:
-    reference-doc: _extensions/mnb100.pptx
+    reference-doc: mnb100.pptx
 knitr:
     opts_chunk: 
         echo: false

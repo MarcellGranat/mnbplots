@@ -7,18 +7,16 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
 
-```{r setup}
 library(mnbplots)
 ```
 
-
-```{r}
+```{r warning = FALSE}
 library(ggplot2)
 ```
 
 ## Theme & language setup
+
 ```{r}
 ggplot(economics) +
   geom_line(aes(date, unemploy), color = closest_mnb_color("blue")) +
@@ -38,7 +36,6 @@ ggplot(economics) +
 ```
 
 ## Working with colors
-
 
 ```{r}
 mnb_colors()

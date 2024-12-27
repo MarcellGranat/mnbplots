@@ -2,6 +2,7 @@
 <url><loc>/404.html</loc></url>
 <url><loc>/articles/GFD.html</loc></url>
 <url><loc>/articles/Introduction.html</loc></url>
+<url><loc>/articles/PPTX.html</loc></url>
 <url><loc>/articles/index.html</loc></url>
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
@@ -26,5 +27,6 @@
 <url><loc>/reference/scale_y_number.html</loc></url>
 <url><loc>/reference/scale_y_percent.html</loc></url>
 <url><loc>/reference/theme_mnb_ts.html</loc></url>
+<url><loc>/reference/use_slide.html</loc></url>
 </urlset>
 
