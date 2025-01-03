@@ -71,6 +71,9 @@
 
     
     
+<div class="section level2">
+<h2 id="slide-template">Slide template<a class="anchor" aria-label="anchor" href="#slide-template"></a>
+</h2>
 <p>The <code>use_slide</code> function in the <code>mnbplots</code>
 package allows you to create PowerPoint slide templates using Quarto.
 This function is designed to streamline the process of generating new
@@ -102,7 +105,26 @@ presentations using Quarto and the <code>mnbplots</code> package. By
 automating the template selection and file creation process, it saves
 you time and effort, allowing you to focus on the content of your
 slides.</p>
-  </main>
+</div>
+<div class="section level2">
+<h2 id="boxes">Boxes<a class="anchor" aria-label="anchor" href="#boxes"></a>
+</h2>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/text_boxes.html">text_boxes</a></span><span class="op">(</span></span>
+<span>  chars <span class="op">=</span> <span class="fl">30</span>,</span>
+<span>  lines <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>  size <span class="op">=</span> <span class="fl">10</span>, </span>
+<span>    <span class="st">"[yellow][80] **Title**[][]\nExplanation in short sentences"</span>,</span>
+<span>    <span class="st">"[red]Another box"</span></span>
+<span>    <span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Duplicated aesthetics after name standardisation: <span style="color: #00BB00;">colour</span>, <span style="color: #00BB00;">fill</span>, <span style="color: #00BB00;">hjust</span>,</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">label.size</span>, and <span style="color: #00BB00;">text.colour</span></span></span>
+<span><span class="co">#&gt; Warning: Duplicated aesthetics after name standardisation: <span style="color: #00BB00;">colour</span>, <span style="color: #00BB00;">fill</span>, and <span style="color: #00BB00;">hjust</span></span></span>
+<span><span class="co">#&gt; Duplicated aesthetics after name standardisation: <span style="color: #00BB00;">colour</span>, <span style="color: #00BB00;">fill</span>, and <span style="color: #00BB00;">hjust</span></span></span></code></pre></div>
+<p><img src="PPTX_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
