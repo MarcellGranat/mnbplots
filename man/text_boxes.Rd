@@ -5,12 +5,12 @@
 \title{Create Multiple Text Boxes}
 \usage{
 text_boxes(
-  chars = 30,
-  lines = 3,
+  ...,
+  chars = 40,
+  lines = 4,
   size = 15,
   base_color = "black",
-  base_fill = "transparent",
-  labels = c("[10]bluedmoewndo3[][red]\\nred []", "[40]bluedewm[][red]\\nred []")
+  base_fill = "transparent"
 )
 }
 \arguments{

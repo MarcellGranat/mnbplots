@@ -1,0 +1,22 @@
+---
+title: memo
+---
+
+## Memo template
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(mnbplots)
+```
+
+The `use_memo` function in the `mnbplots` package allows you to create **docx** memo templates using Quarto. This function is designed to streamline the process of generating new memo files from predefined templates, making it easier to maintain consistency across your presentations.
+
+To use the `use_memo` function, you need to specify the filename for the new memo and the template you want to use. By default, the filename is set to "memo" and the template is set to "mnb100". You can customize these parameters to fit your specific needs. For example, you can create a new memo file named "presentation" using the custom_template by calling `use_memo("felkeszito_esemeny", "hu")`.
+
+
+The function creates a new directory called "\_extensions" (if it doesn't already exist) and copies the template file into this directory. The new memo file is then created with the specified filename and the ".qmd" extension. Currently, hu and en are the only supported languages!
+
+Overall, the `use_memo` function is a powerful tool for anyone looking to create consistent and professional memos using Quarto and the `mnbplots` package. By automating the template selection and file creation process, it saves you time and effort, allowing you to focus on the content of your memos! Because that is your job!!! ... now, go and do it! ;)

@@ -171,9 +171,3 @@ gt_as_image <- function(gt) {
   # knitr::include_graphics(filename)
   }
 }
-
-lorem <- "Excepteur laboris fugiat tempor pariatur excepteur quis est sint laboris. Adipisicing ipsum est ad cillum amet exercitation sint aliqua culpa in aliquip laboris anim mollit. Enim excepteur irure laborum voluptate et incididunt ex aliqua non nisi enim quis pariatur ipsum. Exercitation velit qui occaecat. Mollit duis consequat tempor in quis Lorem pariatur incididunt."
-
-iris |> 
-  gt_mnb(title = "Random title", comment = lorem) |> 
-  gt_as_image()

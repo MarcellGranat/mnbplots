@@ -4,5 +4,6 @@ pkgdown_sha: ~
 articles:
   articles/GFD: GFD.html
   articles/Introduction: Introduction.html
+  articles/memo: memo.html
   articles/PPTX: PPTX.html
-last_built: 2025-01-03T11:06Z
+last_built: 2025-01-23T18:45Z
